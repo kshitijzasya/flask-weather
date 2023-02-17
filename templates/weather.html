@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <h1> Main Pages</h1>
+        <section>
+            <form action="/" method="post"> 
+                <input name="city" />
+                <input type="submit" placeholder="Done"/>
+            </section>    
+        </section>
+        <section>
+            {% for weather in weather_data %}
+            <div class="media-left">
+                <figure class="image is-50x50">
+                        <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="Image">
+                </figure>
+            </div>
+            <p>
+                <span>Weather details:</span>
+                <br>
+                
+                    <div class="row">
+                        <span>City: {{weather.city}}</span>
+                        <span>Temp: {{weather.temperature}}</span>
+                        <span>Desc: {{weather.description}}</span>
+                    </div>
+                
+            </p>
+            {% endfor %}
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
